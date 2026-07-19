@@ -10,11 +10,16 @@ interface HeaderProps {
 
 export default function Header({ infiniteMode, setInfiniteMode, pullsLeft }: HeaderProps) {
   return (
-    <div className="w-full max-w-xs flex flex-col items-center pt-8 pb-2 z-10 gap-3 shrink-0">
+    /* Completely removed pt-8 pb-2 and gap-3, replacing them with 0px bounds 
+       to instantly force the header to sit higher up on mobile viewports */
+    <div 
+      className="w-full max-w-xs flex flex-col items-center z-10 shrink-0" 
+      style={{ paddingTop: '0px', paddingBottom: '0px', gap: '4px', marginTop: '0px', marginBottom: '0px' }}
+    >
       
       {/* Modes Control Toggle Switch */}
       <div 
-        className="relative p-1 rounded-2xl flex gap-2 overflow-hidden border border-white/10 shadow-inner"
+        className="relative p-1 rounded-2xl flex gap-2 overflow-hidden border border-white/10 shadow-inner scale-95"
         style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
       >
         {/* Normal Mode Button */}
@@ -44,13 +49,17 @@ export default function Header({ infiniteMode, setInfiniteMode, pullsLeft }: Hea
         </button>
       </div>
 
-      {/* Main Stats Header Display */}
+      {/* Main Stats Header Display - Compressed closely to reclaim lower screen room */}
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold text-[#e53e3e] tracking-wide drop-shadow-md">GACHA HELL</h1>
+        <h1 
+          className="text-3xl font-extrabold text-[#e53e3e] tracking-wide drop-shadow-md mb-0 pb-0"
+          style={{ lineHeight: '1.0' }}
+        >
+          GACHA HELL
+        </h1>
         
-        {/* Inline CSS style explicitly overrides global text colors to guarantee true white */}
         <p 
-          className="mt-1 text-sm font-bold tracking-wide block"
+          className="mt-0.5 text-xs font-bold tracking-wide block"
           style={{ color: '#ffffff' }}
         >
           Pulls Left Today: <span style={{ color: '#ffffff' }}>{infiniteMode ? "∞" : pullsLeft}</span>
