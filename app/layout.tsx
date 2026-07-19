@@ -2,7 +2,7 @@ import React from 'react';
 import './globals.css'; // This ensures your global styling/Tailwind loads
 
 export const metadata = {
-  title: 'Gacha Hell',
+  title: 'Gracelyn Gacha Hell',
   description: 'An intervention webapp.',
 };
 

@@ -46,7 +46,7 @@ export default function Header({ infiniteMode, setInfiniteMode, pullsLeft }: Hea
 
       {/* Main Stats Header Display */}
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold text-[#e53e3e] tracking-wide drop-shadow-md">GACHA HELL</h1>
+        <h1 className="text-4xl font-extrabold text-[#e53e3e] tracking-wide drop-shadow-md">GRACELYN<br/>GACHA HELL</h1>
         
         {/* Inline CSS style explicitly overrides global text colors to guarantee true white */}
         <p 
